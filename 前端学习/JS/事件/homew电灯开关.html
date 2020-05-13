@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../PIC/灯OFF.jpg" id="lightOff" alt="">
+
+
+    <script>
+        var light = document.getElementById("lightOff");
+        var bool = true;
+
+        light.onclick = function(){
+            if(bool){//如果灯是关的为真，那么开灯
+                light.src = "../PIC/灯1.jpg";
+                bool = false;
+            }
+            else{
+                light.src = "../PIC/灯OFF.jpg";
+                bool = true;
+            }
+            
+        }
+
+        
+
+    </script>
+    
+</body>
+</html>

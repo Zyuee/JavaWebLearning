@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array对象</title>
+
+    <script>
+        /*
+        1数组的创建
+        */
+
+        var arr1 = new Array(1,2,3,4);//元素列表
+        var arr2 = new Array(5);//数组的个数
+        var arr3 = [1,2,3,4];//元素列表
+
+        document.write(arr1 + "<br>");
+        document.write(arr2 + "<br>");
+        document.write(arr3 + "<br>")
+
+        /*
+        特点：
+            1.元素的类型可变
+            2.元素的长度可变
+
+        */
+        var arr4 = new Array(1,"abc",false)
+        document.write(arr4.length+"<br>");
+        document.write(arr4[2]+"<br>");
+        arr4[10] = 4;
+        document.write(arr4.length+"<br>");
+
+        //join方法
+        document.write(arr4+"<br>");
+        document.write(arr4.join("--")+"<br>");
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

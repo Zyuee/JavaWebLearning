@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window对象</title>
+
+</head>
+<body>
+    <input type="button" name="" id="open_btn" value="点我" >
+    <input type="button" name="" id="close_btn" value="关闭窗口" >
+    
+    
+
+
+    
+    <script>
+        /*
+        window.alert("这是一个警告框");
+        var flag = window.confirm("您确定要退出码？");
+        document.write(flag);
+
+        if(flag){
+            window.alert("welcome!");
+
+        }
+        else{
+            window.alert("bye");
+        }
+
+        
+        var newWindows;
+        var openVar = document.getElementById("open_btn");
+        // function myfunction(){
+        //     window.open("https://cn.bing.com/");
+        //     window.alert("111")
+        // }
+
+        openVar.onclick = function(){
+            newWindows = window.open("https://cn.bing.com/");
+            window.alert("111")
+        }
+
+        var closeVar = document.getElementById("close_btn");
+        closeVar.onclick = function(){
+            newWindows.close();//关闭当前窗口
+
+        }
+        */
+
+        //一次性的定时器
+        var time1 = setTimeout("boomFunction();",3000);
+
+        function boomFunction(){
+            alert("boom");
+        }
+
+        //循环定时器
+
+        var time2 = setInterval("boomFunction();",10000);
+
+        //取消定时器,用返回值取消
+        clearTimeout(time1);
+
+        clearInterval(time2);
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

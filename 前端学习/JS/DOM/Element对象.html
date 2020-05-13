@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="">点我试试</a>
+    <input type="button" value="设置属性" name="" id="btn_set">
+    <input type="button" value="删除属性" name="" id="remove_set">
+
+    <script>
+        var ele_a1 = document.getElementsByTagName("a")[0];
+            ele_a1.removeAttribute("href");
+
+        //获取btn
+        var btn = document.getElementById("btn_set");
+        btn.onclick = function(){
+            var ele_a = document.getElementsByTagName("a")[0];//数组使用索引
+
+            ele_a.setAttribute("href","https://www.w3school.com.cn/xmldom/xmldom_reference.asp");
+        }
+        //移除属性
+        var btn2 = document.getElementById("remove_set");
+        btn2.onclick = function(){
+            var ele_a = document.getElementsByTagName("a")[0];
+            ele_a.removeAttribute("href");
+        }
+
+        
+    </script>
+    
+</body>
+</html>

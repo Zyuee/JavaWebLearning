@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        1.创建方法
+            1.1function 方法名称(){
+                方法体;
+            }
+        */
+        function fun1(a,b){
+            alert(a+b);
+        }
+
+        //fun1(3,4)
+        alert(fun1.length)//说明方法也是一个对象
+
+        /*
+            1.2 var 方法名称 = function(形式参数){
+                方法体;
+            }
+        
+        */
+
+        var fun2 = function(a,b){
+            document.write(a*b);
+        }
+
+        fun2(3,4);
+
+        document.write("<hr>");
+
+
+        //实参的个数与形参不等
+        var fun3 = function(a,b){
+            //document.write(a*b);
+            document.write(a);
+        }
+
+        fun3(3);
+        document.write("<hr>");
+
+        //任意个数的和
+        function add(){
+            var sum = 0;
+            for(var i = 0; i < arguments.length; i++){
+                sum += arguments[i];
+            }
+            return sum;
+        }
+
+        var sum1 = add(1,2,3,4,5);
+
+        document.write(sum1);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

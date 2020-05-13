@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>99乘法表</title>
+
+    <style>
+        td{
+            border: 1px solid rebeccapurple;
+        }
+    </style>
+    <script>
+        document.write("<table  align = center>")
+
+        //for 循环嵌套，展示乘法表
+        for(var i = 1; i <=9; i++){
+            // document.write("<br>")
+            document.write("<tr>")
+
+            for(var j = 1; j <= i ; j++){
+
+                document.write("<td>")
+
+                document.write(i+" * "+j+" = "+(j*i));
+                // document.write(i+" * "+j)
+
+                document.write("</td>")
+
+            }
+            document.write("</tr>")
+        }
+
+        document.write("</table>")
+
+        //完成表格的嵌套
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

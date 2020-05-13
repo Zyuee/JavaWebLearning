@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="" id="btn" value="查找历史记录">
+    <a href="./homeWork轮播图.html">轮播图</a>
+    <input type="button" name="" id="forward" value="前进">
+
+
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            var len = history.length;
+            alert(len);
+        }
+
+        var btn2 = document.getElementById("forward");
+        btn2.onclick = function(){
+            
+            history.forward();
+
+        }
+    </script>
+    
+</body>
+</html>

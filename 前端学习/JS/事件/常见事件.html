@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见事件</title>
+</head>
+<body>
+
+    
+
+    <form action="#" id="form">
+
+        <input type="text" name="userName" id="userName">
+
+        <select name="city" id="city">
+        <option value="">--请选择--</option>
+        <option value="">北京</option>
+        <option value="">上海</option>
+        <input type="submit" name="" id="submit" value="提交" >
+    </select>
+    </form>
+    
+
+    <script>
+        //1.失去焦点事件 一般用于表单验证
+        var userName = document.getElementById("userName");
+        userName.onblur = function(){
+            alert("失去焦点");
+        }
+
+        //2.onload事件
+
+        window.onload = function(){
+            //1.失去焦点事件 一般用于表单验证
+            var userName = document.getElementById("userName");
+            userName.onblur = function(){
+                //alert("失去焦点");
+
+            //3.鼠标移到元素之上
+            userName.onmouseover = function(){
+                //alert("鼠标来了")
+            }
+
+            //4.鼠标点击事件
+            userName.onmousedown = function(event){
+                alert(event.button);
+            }
+
+            //5.表单提交事件
+
+              //5.1阻止表单的提交
+              document.getElementById("form").onsubmit = function(){
+                  var flag = false;
+
+                  return flag;
+              }
+        }
+        }
+
+    </script>
+    
+</body>
+</html>

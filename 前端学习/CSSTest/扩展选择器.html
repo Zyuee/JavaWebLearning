@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div p{
+            color : red;
+        }
+        
+        /* 含有p标签的div元素 */
+        div > p{
+            border: 1px solid;
+        }
+
+        input[type = 'text']{
+            border: 1px solid;
+        }
+
+        /* 伪类选择器 */
+
+        a:link{
+            color : pink;
+        }
+
+        a:hover{
+            color : green;
+        }
+
+        a:visited{
+            color : grey;
+        }
+
+        a:active{
+            color : aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>a:link
+        <p>
+            p标签内部
+
+        </p>
+        p标签外部
+    </div>
+
+    <div>
+        没有p标签的div标签
+    </div>
+    <input type="text" name="" id="">
+    <input type="password" name="" id="">
+    <br>
+
+    <a href="#">链接</a>
+</body>
+</html>

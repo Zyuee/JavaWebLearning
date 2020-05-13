@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    // 正则对象的创建
+    // var reg = new RegExp("正则表达式");
+    // var reg2 = /正则表达式/
+
+    //
+    var reg = new RegExp("^\\w{6,12}$");
+    var reg2 = /^\w{6,12}$/;//^开始$结束
+
+    //方法
+    var username = "zhangsan";
+    var bool = reg2.test(username);
+    alert(bool);
+
+</script>
+<body>
+    
+</body>
+</html>

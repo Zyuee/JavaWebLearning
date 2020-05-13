@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 控制所有的元素 */
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        /* 元素选择器 */
+        body{
+            background: url("./PIC/back.jpg");
+        }
+
+        .re_all{
+            width: 900px;
+            height: 500px;
+            border: solid 5px gray;
+            background-color: whitesmoke;
+            margin: auto;
+            margin-top: 30px;
+        }
+        /* 左边的div */
+        .re_left{
+            /* border: hotpink 1px solid; */
+            float: left;
+            /* color: #ffd026; */
+            margin: 15px;
+        }
+
+        .re_left > p:first-child{
+            color: #ffd026;
+            font-size: 20px;
+            
+
+        }
+        .re_left > p:last-child{
+            color: #a6a6a6;
+            font-size: 20px;
+        }
+
+        /* 右边的div */
+        .re_right{
+            /* border: hotpink 1px solid; */
+            float:right;
+            margin: 15px;
+        }
+        .re_right > p:first-child{
+            font-size: 13px;
+
+        }
+
+        .re_right p a{
+            color: rgb(228, 133, 181);
+        }
+
+
+        /* 中间的div */
+        .re_center{
+            /* border: hotpink 1px solid; */
+            float: left;
+            margin-left: 50px;
+        }
+        .td_left {
+            
+            height: 45px;
+            width: 100px;
+            text-align: right;
+        }
+
+        .td_right{
+            padding-left: 25px;
+
+        }
+        /* id选择器 */
+        #usersname,#password,#Email：,#name,#tel,#birth,#yanzheng {
+            width: 251px;
+            height: 32px;
+            border: gray 1px solid;
+
+            /* 设置圆角 */
+            border-radius: 5px;
+            padding-left: 3px;
+
+        }
+
+        #yanzheng{
+            width: 90px;
+        }
+        #img_check{
+            height: 32px;
+            vertical-align: middle;
+        }
+        #sub_button{
+            width: 150px;
+            height: 45px;
+            background-color: yellowgreen;
+            
+
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            //1.给表单绑定submit事件
+            document.getElementById('sub_button').onsubmit=function(){
+                //调用用户校验方法 checkuserName()
+                //调用密码校验方法 checkPassword()
+                alert("111");
+
+                return checkUserName();
+
+            }
+            // document.getElementById("form").onsubmit = function(){
+            // //调用用户校验方法 checkuserName()
+            // //调用密码校验方法 checkPassword()
+
+            //     return checkUserName();
+
+            // }
+            //调用用户校验方法 checkuserName()
+            //调用密码校验方法 checkPassword()
+
+
+            
+
+        }
+
+        //校验用户名
+        function checkUserName(){
+            //1.获取用户名的值
+            var userName = document.getElementById("usersname").value;
+
+
+            //2.定义正则表达式
+            var reg_userName = /^\w(6,12)$/;
+            //3.判断值是否符合正则的规则
+            var bool = reg_userName.test(userName);
+
+            //4.获取输入的span标签
+            var span = document.getElementById("s_usersname")
+            if(bool){
+                //提示绿色对勾
+                span.innerHTML = "<img height='25' weight='35' src='./pic1/勾.jpg'>";
+            }
+            else{
+                //提示红色用户名有误
+                span.innerHTML = "用户名有误";
+            }
+            return bool;
+
+        }
+    </script>
+</head>
+<body>
+    <div class = 're_all'>
+        <div class = 're_left'>
+            <p>新用户注册</p>
+            <p>REGISTER</p>
+        </div>
+
+        <!-- center -->
+        <div class="re_center">
+            <div class="re_form">
+                <form action="#" method="POST">
+                    <table align="center" width = '500' > 
+                        <tr>
+                            <td class="td_left"><label for="usersname">用户名：</label> </td>
+                            <td class="td_right">
+                                <input type="text" name="usersname" id="usersname" placeholder="请输入姓名">
+                                <span id="s_usersname" class="error"></span>
+                            </td>
+                        </tr>
+            
+                        <tr>
+                            <td class="td_left"><label for="password">密码：</label> </td>
+                            <td class="td_right">
+                                <input type="password" name="password" id="password" placeholder="请输入密码">
+                                <span id="s_password" class="error"></span>
+                            </td>
+                        </tr>
+            
+                        <tr>
+                            <td class="td_left"><label for="Email：">Email：</label> </td>
+                            <td class="td_right"><input type="email" name="Email：" id="Email：" placeholder="请输入邮箱"></td>
+                        </tr>
+            
+                        <tr>
+                            <td class="td_left"><label for="name">姓名：</label> </td>
+                            <td class="td_right"><input type="text" name="name" id="name" placeholder="请输入姓名"></td>
+                        </tr>
+            
+                        <tr>
+                            <td class="td_left"><label for="tel">手机号：</label> </td>
+                            <td class="td_right"><input type="text" name="tel" id="tel" placeholder="请输入姓名"></td>
+                        </tr>
+            
+                        <tr>
+                            <td class="td_left">性别：</td>
+                            <td class="td_right"><input type="radio" name="sex" id="" value = "male">男 
+                                <input type="radio" name="sex" id="" value = 'female'>女</td>
+                        </tr>
+            
+                        <tr>
+                            <td class="td_left"><label for="birth">出生日期：</label> </td>
+                            <td class="td_right"><input type="date" name="birth" id="birth" ></td>
+                        </tr>
+            
+                        <tr>
+                            <td class="td_left"><label for="yanzheng">验证码：</label> </td>
+                            <td class="td_right"><input type="text" name="yanzheng" id="yanzheng" >
+                            <img src="./PIC/验证码.jpg" alt="" id="img_check"></td>
+                        </tr>
+            
+                        <tr >
+                            <td colspan="2" align="center"  ><input type="submit" name="" id="sub_button" value="注册"></td>
+                            
+                        </tr>
+            
+                        
+            
+            
+                    </table>
+                </form>
+                
+            </div>
+
+        </div>
+
+        <div class="re_right">
+            <p>已有账号？<a href="#">立即登录</a></p>
+
+        </div>
+
+
+
+
+    </div>
+</body>
+</html>
