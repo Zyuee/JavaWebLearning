@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edga">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <!-- jQuery -->
+    <script src="./js/jquery-3.2.1.min.js"></script>
+
+    <!-- 加载Boostrap的所有js插件，也可以只加载单个插件 -->
+    <script src="./js/bootstrap.min.js"></script>
+
+    <style>
+        .col-sm-3{
+            border: 2px solid skyblue;
+            height: 200px;
+            width: 200px;
+            background-color: slategray;
+        }
+        .mini,.mini01{
+            border: 1px solid gray;
+            height: 100px;
+            width: 100px;
+            background-color:palevioletred;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            //改变id为one的元素的背景颜色为红色
+            $("#b1").click(function(){
+                $("#one").css("backgroundColor","pink");
+            })
+            //改变标签名为div的所有元素的背景色为 红色
+            $("#b2").click(function(){
+                $("div").css("backgroundColor","pink");
+            })
+
+            //改变class为mini的所有元素的背景色为 红色
+            $("#b3").click(function(){
+                $(".mini").css("backgroundColor","pink");
+            })
+
+            //改变唯有的span元素和id为two的元素的背景色为红色
+            $("#b4").click(function(){
+                $("span,#two").css("backgroundColor","pink");
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <input type="button" value="保存" class="minib" name="ok">
+    <input type="button" name="" id="b1" value="改变id为one的元素的背景颜色为红色">
+    <input type="button" name="" id="b2" value="改变元素名为div的所有元素的背景色为 红色">
+    <input type="button" name="" id="b3" value="改变class为mini的所有元素的背景色为 红色">
+    <input type="button" name="" id="b4" value="改变唯有的span元素和id为two的元素的背景色为红色">
+
+    <h1>这是一个H1标题</h1>
+    <h2>这是一个H2标题</h2>
+    
+    <div class="row">
+        <div class="col-sm-3" id="one">id为one</div>
+
+        <div class="col-sm-3" id="two">
+            id为two
+            <div class="mini">class是mini</div>
+        </div>
+
+        <div class="col-sm-3 one">
+            class是one
+            <div class="mini">class是mini</div>
+            <div class="mini01">class是mini01</div>
+        </div>
+
+        <span class="col-sm-3"></span>
+    </div>
+
+    
+
+ 
+    
+
+    
+</body>
+</html>

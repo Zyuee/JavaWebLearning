@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery -->
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function(){
+            var citys = $("#city li");
+
+            citys.each(function(index,element){//传入索引
+                //获取li对象的第一种方法,缺少索引获取
+                //alert(this.innerHTML);
+
+                //获取li对象的第二种方法
+                //alert(index+":"+element.innerHTML);
+
+                // if("上海" == $(element).html()){
+                //     return true;
+                // }
+
+                // //element转换成jquery对象
+                // alert($(this).html());
+
+            })
+
+            $.each(citys,function(index,element){
+                //模拟continue或者break
+                if("上海" == $(element).html()){
+                    return true;
+                }
+                
+                alert($(this).html());
+            })
+
+            for(li of citys){
+                alert($(li).html());
+            }
+        })
+    </script>
+</head>
+<body id="city">
+    <ul>
+        <li>北京</li>
+        <li>上海</li>
+        <li>天津</li>
+        <li>重庆</li>
+
+    </ul>
+    
+</body>
+</html>

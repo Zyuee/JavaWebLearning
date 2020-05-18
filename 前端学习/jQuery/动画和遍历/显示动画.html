@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery -->
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script>
+        function alfun(){alert("succeed");}
+
+        function hidefun(){
+            $("#showDiv").hide("slow","swing",alfun());
+
+        }
+        function showfun(){
+            $("#showDiv").show("slow","swing",alfun());
+        }
+        function togglefun(){
+            //$("#showDiv").toggle("slow");
+            $("#showDiv").slideToggle("slow");
+        }
+    </script>
+
+    <style>
+        #showDiv{
+            border: 2px solid pink;
+            background-color: pink;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+</head>
+<body>
+    <input type="button" value="点击按钮隐藏div" name="" id="" onclick="hidefun()">
+    <input type="button" value="点击按钮显示div" name="" id="" onclick="showfun()">
+    <input type="button" value="点击按钮切换div显示和隐藏" name="" id="" onclick="togglefun()">
+
+    <div id="showDiv">div显示和隐藏</div>
+    
+</body>
+</html>

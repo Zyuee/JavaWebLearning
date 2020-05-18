@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script>
+        //入口
+        $(function(){
+            //获取奇数行的背景色设置为pink
+            $("tr:gt(0):odd").css("backgroundColor","pink");
+            //偶数
+            $("tr:gt(0):even").css("backgroundColor","yellow");
+        })
+    </script>
+</head>
+<body>
+    <!-- 定义表单 -->
+    <form action="#" method="POST">
+        <table align="center" width = '500' border="1"> 
+            <tr>
+                <td><label for="usersname">用户名：</label> </td>
+                <td><input type="text" name="usersname" id="usersname" placeholder="请输入姓名"></td>
+            </tr>
+
+            <tr>
+                <td><label for="password">密码：</label> </td>
+                <td><input type="password" name="password" id="password" placeholder="请输入密码"></td>
+            </tr>
+
+            <tr>
+                <td><label for="Email：">Email：</label> </td>
+                <td><input type="email" name="Email：" id="Email：" placeholder="请输入邮箱"></td>
+            </tr>
+
+            <tr>
+                <td><label for="name">姓名：</label> </td>
+                <td><input type="text" name="name" id="name" placeholder="请输入姓名"></td>
+            </tr>
+
+            <tr>
+                <td><label for="tel">手机号：</label> </td>
+                <td><input type="text" name="tel" id="tel" placeholder="请输入姓名"></td>
+            </tr>
+
+            <tr>
+                <td>性别：</td>
+                <td><input type="radio" name="sex" id="" value = "male">男 
+                    <input type="radio" name="sex" id="" value = 'female'>女</td>
+            </tr>
+
+            <tr>
+                <td><label for="birth">出生日期：</label> </td>
+                <td><input type="date" name="birth" id="birth" ></td>
+            </tr>
+
+            <tr>
+                <td><label for="yanzheng">验证码：</label> </td>
+                <td><input type="text" name="yanzheng" id="yanzheng" >
+                <img src="./PIC/验证码.jpg" alt=""></td>
+            </tr>
+
+            <tr >
+                <td colspan="2" align="ceter"><input type="submit" name="" id="" value="注册"></td>
+                
+            </tr>
+
+            
+
+
+        </table>
+    </form>
+    
+</body>
+</html>

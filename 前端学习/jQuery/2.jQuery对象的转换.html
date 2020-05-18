@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div id="div1">
+    div1...
+</div>
+<div id="div2">
+    div2...
+</div>
+
+<script>
+    //通过js的方式来获取名称叫div的所有html元素对象，是一个数组
+    var divArr = document.getElementsByTagName("div");
+    alert(divArr.length);
+    //对divArr中所有的div让其标签体的内容改为"aaa"
+    for (let i = 0; i < divArr.length; i++) {
+        divArr[i].innerHTML = "aaa";
+        //改为jQuery对象使用
+        $(divArr[i]).html("ccc");
+        
+    }
+    //直接使用jQuery方法来获取名称叫div的所有html元素对象
+    var $divs = $("div");
+    alert($divs);//可以直接当成数组使用
+    $divs.html("ddd");
+
+    //jQuery对象获取js对象
+    $divs[0].innerHTML = "fff";
+
+</script>
+   
+</body>
+</html>

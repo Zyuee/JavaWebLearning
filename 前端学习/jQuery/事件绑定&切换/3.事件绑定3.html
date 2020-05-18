@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery -->
+    <script src="../js/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $(function(){
+            $("#btn").toggle(function(){
+                $("#cls1").css("backgroundColor","green");
+
+            }).toggle(function(){
+                $("#cls1").css("backgroundColor","pink");
+            })
+           
+        })
+    </script>
+    <style>
+        #cls1{
+            border: 1px solid pink;
+            width: 250px;
+            height: 250px;
+            background-color: pink;
+            font-size: 5px;
+
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="切换事件" id="btn">
+    <div class="cls1" id="cls1">点击按钮变成绿色，再次点击变成红色</div>
+    
+    
+</body>
+</html>

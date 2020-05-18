@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery -->
+    <script src="../js/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $(function(){
+            //绑定
+            $("#btn1").on("click",function(){
+                alert("我被绑定了");
+            })
+
+            //接触绑定
+            $("#btn2").click(function(){
+                $("#btn1").off("click");
+            })
+
+           
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="绑定" id="btn1">
+    <input type="button" value="接触绑定" name="" id="btn2">
+    
+</body>
+</html>

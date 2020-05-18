@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- jQuery -->
+    <script src="../js/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $(function(){
+
+            //给鼠标绑定事件,链式编程
+            $("#name").mouseover(function(){
+                alert("鼠标来了");
+            }).mouseout(function(){
+                alert("鼠标走了");
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text" id="name" value="绑定点击事件">
+    
+</body>
+</html>

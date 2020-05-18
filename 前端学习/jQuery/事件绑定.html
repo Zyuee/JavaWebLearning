@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <input type="button" id="btn1" value="点我">
+
+    <script>
+        // //加载事件,但是在js这个方法中只能加载一次，后赋值会覆盖前赋值
+        // function fun1(){alert("abc");}
+        // window.onload = fun1;
+
+        // function fun2(){alert("abc");}
+        // window.onload = fun2;
+
+        //jq入口函数，可以定义多次
+
+        $(function(){
+            //样式控制
+            $("#div1").css("backgroundColor","red");
+
+            //点击事件
+           $("#btn1").click(function(){alert("abc");}); 
+        })
+
+        //点击事件
+        
+        
+    </script>
+</body>
+</html>
