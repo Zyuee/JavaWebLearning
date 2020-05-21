@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="改变message" @click='changeM'>
+        <input type="text" v-model='message'>
+        <p>对应的message：{{message}}</p>
+        <br>
+        <br>
+        
+        <input type="text" v-model='message1' @keyup.enter="getM">
+        <p>对应的message：{{message2}}</p>
+        <!-- <p>对应的message：{{message}}</p> -->
+        <br>
+
+        
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                message:'原始的文字',
+                message1:'原始文字1',
+                message2:'原始'
+            },
+            methods:{
+                changeM:function(){
+                    this.message = '改变后的文字'
+                },
+                getM:function(){
+                    this.message2 = this.message1;
+                }
+                
+            }
+        })
+    </script>
+    
+</body>
+</html>

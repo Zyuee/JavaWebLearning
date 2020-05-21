@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        .active{
+            border: 1px red solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src='imgSrc' alt="">
+        <br>
+
+        <!-- 更为常用 -->
+        <img :src='imgSrc' alt="" :title='imgTtile+"???"'><br>
+
+        <!-- class,和控制样式混合使用 -->
+        <img :src='imgSrc' alt="" :title='imgTtile+"???"' :class='isActive?"active":""'><br>
+
+        <input type="button" @click='toggleActive' value="try">
+        
+
+        
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                imgSrc:'../img/monkey.gif',
+                imgTtile:'这是啥啊?',
+                isActive:false,
+            },
+            methods:{
+                toggleActive(){
+                    this.isActive = !this.isActive;
+                }
+            }
+            
+        })
+    </script>
+    
+</body>
+</html>

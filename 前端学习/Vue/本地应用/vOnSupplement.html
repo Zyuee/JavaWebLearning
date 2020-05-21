@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        
+        <input type="button" name="" id="" @click='print' value="点击">
+        <input type="text" name="" id="" @keyup.enter="sayHi">
+        
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                text:'hello!'
+            },
+            methods:{
+                print:function(){
+                    console.log(this.text);
+                },
+
+                sayHi:function(){
+                    alert("hello!");
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- v-text指令 -->
+        <h2 v-text='message'>原始的文字</h2>
+        <h2>{{message}}test</h2>
+
+        <!-- v-html指令 -->
+        <p v-html='content'></p>
+        <p v-text='content'></p>
+
+        <!-- v-on -->
+        <input type="button" value="click" v-on:click="doIt" name="" id="">
+        <input type="button" value="简写" @click="doIt" name="" id="">
+
+        <!-- test -->
+        <p @click='changeText'>点击改变文字</p>
+    </div>
+
+    <script>
+        var test = new Vue({
+            el:'#app',
+            data:{
+                message:'替换',
+                content:'<a href="https://cn.bing.com/">click</a>'
+            },
+            methods:{
+                doIt:function(){
+                    alert("do it!")
+                },
+                changeText:function(){//如何从当前对象获得属性
+                    this.message = '已经替换'
+                }
+                // test:'测试文本',在method方法里面只能放function
+
+            }
+        })
+    </script>
+    
+</body>
+</html>

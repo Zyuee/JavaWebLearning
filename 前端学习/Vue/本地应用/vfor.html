@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <!-- 数组的例子 -->
+            <li v-for='(item,index) in arr'>{{ index+1 }}test:{{item}}</li>
+        </ul>
+        <ul>
+            <li>
+                <!-- 字典的例子 -->
+                <li v-for='it in key'>{{it.name}}</li>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                arr:[1,2,3,4,5],
+                key:[{name:'jack',gender:'male'},{name:'rose',gender:'female'}],
+                
+
+            },
+            methods:{
+                add:function(){
+                    
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>
