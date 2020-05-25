@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../AJAX/js/jquery-3.2.1.min.js"></script>
+    <script>
+        function fun(){
+            $.get("https://autumnfish.cn/api/joke",function(response){
+                alert(response);
+            })
+
+        }
+    </script>s
+</head>
+<body>
+    <input type="button" value="发送异步请求" onclick="fun();" name="" id="">
+    
+</body>
+</html>

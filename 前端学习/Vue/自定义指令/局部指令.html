@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>局部指令</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" name="" id="" >
+        <input type="text" name="" id="" v-focus>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{                
+            },
+            methods:{},
+            directives:{
+                focus:{//定义了自定义指令的名称
+                    //定义指令
+                    inserted:function(el){
+                        el.focus();
+                    }
+                }
+            }
+
+        })
+
+        
+    </script>
+</body>
+</html>

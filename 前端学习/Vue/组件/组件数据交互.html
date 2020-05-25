@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>{{pmsg}}</div>
+        <menu-item></menu-item>
+    </div>
+
+    <script>
+
+        Vue.component('menu-item',{
+            data:function(){
+                return{
+                    msg:'子组件本身的数据',
+                }
+            },
+            template:'<div>{{msg}}</div>',
+        })
+
+
+        var app = new Vue({
+            el:'#app',
+            data:{
+                pmsg:'父类组件内部',
+            },
+            methods:{},
+
+        })
+    </script>
+    
+</body>
+</html>

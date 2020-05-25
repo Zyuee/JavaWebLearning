@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../AJAX/js/jquery-3.2.1.min.js"></script>
+    <script>
+        function fun(){
+            $.ajax({
+                url:"https://autumnfish.cn/api/joke",
+                type:"GET",
+                data:{"name":"jack","age":"23"},
+                success:function(response){
+                    alert(response);
+                }
+                ,error:function(){
+                    alert("出错啦！")
+                },
+                dataType:"text"
+
+            })
+
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="发送异步请求" onclick="fun();" name="" id="">
+    
+</body>
+</html>

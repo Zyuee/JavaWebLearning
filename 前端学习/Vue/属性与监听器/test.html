@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span>
+            firstName:
+            <input type="text" name="" id="" v-model = "firstName">
+        </span>        
+        <br>
+        <span>
+            lastName:
+            <input type="text" name="" id="" v-model = "lastName">
+        </span>       
+        <br>
+        <span>{{fulName}}</span>
+        <br>
+        <span>{{reFulName}}</span>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                fulName:"",
+                firstName:"",
+                lastName:"",
+                reFulName:""
+
+            },
+            methods:{},
+            compute:{
+                reFulName:function(){
+                    return this.lastName+" "+this.firstName;
+                }
+            },
+            watch:{
+                firstName:function(val){
+                    this.fulName = val + " "+ this.lastName;
+
+                },
+                lastName:function(val){
+                    this.fulName = this.firstName + " " + val;
+                }
+            }
+        })
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.基本格式
+        var person = {"name":"张三","age":23,"gender":true};
+
+        //2.嵌套格式
+        var persons = [
+            {"name":"张三","age":23,"gender":true},
+            {"name":"李四","age":24,"gender":true},
+            {"name":"王五","age":25,"gender":false}
+        ];
+
+        //3.嵌套格式增强
+        var ps = {
+            "ps":[
+            {"name":"张三","age":23,"gender":true},
+            {"name":"李四","age":24,"gender":true},
+            {"name":"王五","age":25,"gender":false}
+            ],
+            "ps1":[
+            {"name":"张三1","age":23,"gender":true},
+            {"name":"李四2","age":24,"gender":true},
+            {"name":"王五3","age":25,"gender":false}
+            ],
+        };
+
+        //获取person对象中所有的键和值
+
+        //for in 
+        //此方法打印出键的值
+        // for(var i in person){
+        //     alert(i);
+        // }
+
+        //
+        // for(var i in person){
+        //     alert(i+":"+person[i]);
+        // }
+
+        //获取persons数组中的所有值
+        for(var index = 0; index < persons.length;index++){
+            var p = persons[index];
+            for(i in p){
+                alert(i+":"+p[i]);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

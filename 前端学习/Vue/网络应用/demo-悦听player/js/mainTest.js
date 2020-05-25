@@ -36,6 +36,9 @@ var app = new Vue({
     musicCover:"",
     hotComments: [],
 
+    // 动画播放状态
+    isPlaying: false,
+
   },
   
   methods:{
@@ -95,12 +98,19 @@ var app = new Vue({
         },
         function(err) {}
       );
-      
 
-      
+    },
 
-
-    }
+    // 歌曲播放
+    play: function() {
+      // console.log("play");
+      this.isPlaying = true;
+    },
+    // 歌曲暂停
+    pause: function() {
+      // console.log("pause");
+      this.isPlaying = false;
+    },
   }
     
       

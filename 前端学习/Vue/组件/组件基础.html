@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <button-counter></button-counter>
+        <hello-world></hello-world>
+    </div>
+
+
+    <script>
+        //基本注册
+        Vue.component('button-counter', {
+            data: function () {
+                return {
+                    count: 0
+                }
+            },
+            template: '<button @click="add">You clicked me {{ count }} times.</button>',
+            methods:{
+                add:function(){
+                    this.count++;
+                }
+            }
+        });
+
+        //大驼峰命名方法
+        Vue.component('HelloWorld',{
+            data:function(){
+                return{
+                    name:'hello'
+                }
+                
+            },
+            template:
+            `
+                <div>
+                <button >click</button>
+                <button >click</button>
+                </div>
+            `,
+        })
+
+        var app = new Vue({
+            el: '#app'
+        })
+    </script>
+</body>
+
+</html>
