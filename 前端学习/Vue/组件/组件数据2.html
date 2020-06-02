@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div :style='{fontSize:fontSize +"px"}'>{{pmsg}}</div>
+        <menu-item :parr='parr' @enlarge-text='handle($event)' @small-text='subtract($event)'></menu-item>
+       
+    </div>
+
+
+    <script>
+
+        Vue.component('menu-item', {
+            //静态传入元素属性
+            props: ['title', 'parr'],
+            data: function () {
+                return {
+                    msg: '子组件本身的数据',
+                }
+            },
+            //子组件
+            template:
+                `
+                <div>
+                    <ul>
+                        <li :key='index' v-for='(item,index) in parr'>{{item}}</li>
+                    </ul>
+                    <button @click='parr.push("lemon")'>click</button>
+                    <button @click='$emit("enlarge-text",5)'>扩大父组件中的字体</button>
+                    <button @click='$emit("small-text",5)'>减小父组件中的字体</button>
+                </div>
+            `,
+        })
+
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                pmsg: '父类组件内部',
+                ptitle: '动态绑定的值',
+                parr: ['apple', 'orange', 'banana'],
+                fontSize:10
+            },
+            methods: {
+                handle:function(val){
+                    this.fontSize += val;
+                },
+
+                subtract:function(val){
+                    this.fontSize -= val
+                }
+            },
+
+        })
+    </script>
+
+</body>
+
+</html>

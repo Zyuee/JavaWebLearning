@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- <fruit-test></fruit-test> -->
+        <fruit :aaa='list'>
+            <template slot-scope="slotProps">
+                <strong v-if="slotProps.info.id==2">{{slotProps.info.name}}</strong>
+                
+            </template>
+        </fruit>
+    </div>
+
+    <script>
+        // //一般子组件封装好后不会再更改，所以一般不把数据写进去
+        // Vue.component('fruit-test',{
+        //     props:['list'],
+        //     data:function(){
+        //         return{
+        //             list:[{
+        //                     id:1,name:'apple'
+        //                 },{
+        //                     id:2,name:'lemon'
+        //                 },{
+        //                     id:3,name:'banana'
+        //                 }
+        //             ]
+
+        //         }
+        //     },
+        //     template:`
+        //         <div>
+        //             <ul>
+        //                 <li v-for="item in list">{{item.name}}</li>
+        //             </ul>
+        //         </div>
+        //     `
+        // });
+
+
+        Vue.component('fruit',{
+            props:['aaa'],
+            data:function(){
+                return{
+                    
+
+                }
+            },
+            template:`
+                <div>
+                    <ul>
+                        <li :key="item.id" v-for="item in aaa">
+                            <slot :info="item"></slot>
+                        </li>
+                    </ul>
+                </div>
+            `
+        });
+
+
+        var app = new Vue({
+            el:"#app",
+            data:{
+                list:[{
+                            id:1,name:'apple'
+                        },{
+                            id:2,name:'lemon'
+                        },{
+                            id:3,name:'banana'
+                        }
+                    ],
+            }
+        })
+    </script>
+    
+</body>
+</html>

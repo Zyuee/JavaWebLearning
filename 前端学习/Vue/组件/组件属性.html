@@ -9,21 +9,21 @@
 <body>
     <div id="app">
         <div>{{pmsg}}</div>
-        <menu-item title='hello'></menu-item>
-        <menu-item :title='ptitle'></menu-item>
+        <menu-item title-test='hello'></menu-item>
+        <menu-item :title-test='ptitle'></menu-item>
     </div>
 
     <script>
 
         Vue.component('menu-item',{
             //静态传入元素属性
-            props:['title'],
+            props:['titleTest'],
             data:function(){
                 return{
                     msg:'子组件本身的数据',
                 }
             },
-            template:'<div>{{msg + "-----------" + title}}</div>',
+            template:'<div>{{msg + "-----------" + titleTest}}</div>',
         })
 
 
