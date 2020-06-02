@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>   
+</head>
+<body>
+
+    <script>
+        //console.dir(Promise);
+
+        //基于promise发送Ajax请求
+        function queryData(url){
+            var p = new Promise(function(resolve,reject){
+                var xmlHttp = new XMLHttpRequest();
+                //console.log(xmlHttp);
+                xmlHttp.onreadystatechange = function(){
+                    if(xmlHttp.readyState !=4 ){return}
+
+                    if(xmlHttp.readyState==4 && xmlHttp.status==200){
+                    resolve(xmlHttp.responseText);
+                       console.log("succeed");
+                       //document.getElementById("myDiv").innerHTML=xmlHttp.responseText;
+                       
+                    }else{
+                        reject("服务器访问错误")
+                    }
+                }
+                xmlHttp.open("GET",url);
+                xmlHttp.send();
+            });
+
+            return p;
+        }
+
+        // queryData('https://autumnfish.cn/api/joke').then(function(response){
+        //     console.log(response);
+        // },function(info){
+        //     console.log(info);
+
+        // })
+
+        var p1 = queryData('https://autumnfish.cn/api/joke');
+        var p2 = queryData('https://autumnfish.cn/api/joke');
+        var p3 = queryData('https://autumnfish.cn/api/joke');
+
+        // Promise.all([p1,p2,p3]).then(function(response){
+        //     console.log(response);
+        // });
+
+        Promise.race([p1,p2,p3]).then(function(response){
+            console.log(response);
+        });
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //请求的地址
+        var f = fetch('https://autumnfish.cn/api/joke',{
+            method:'get'
+        });
+        f.then(function(response){
+            return response.text();
+        }).then(function(data){
+            console.log(data);
+        })
+
+
+    </script>
+</body>
+</html>

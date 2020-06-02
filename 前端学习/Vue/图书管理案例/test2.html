@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/axios.js"></script>
+</head>
+<body>
+
+    <script>
+        axios.defaults.baseURL = 'http://localhost:3000';
+        
+        // queryBooks: async function(){
+        //   var ret = await axios.get('books');
+          
+        //   this.books = ret.data;
+          
+        // }
+
+        async function queryBooks(){
+            var ret = await axios.get('books');
+
+            console.log(ret);
+        }
+
+        // axios.get('books').then(function(res){
+        //     console.log(res.data);
+        // })
+    </script>
+    
+</body>
+</html>

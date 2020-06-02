@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <base-layout>
+            <p slot="header">标题信息</p>
+            <p slot="footer">底部信息</p>
+            <p>默认插槽</p>
+        </base-layout>
+    </div>
+
+    
+
+    <script>
+        Vue.component('base-layout',{
+            template:
+            `
+            <div>
+                <head>
+                    <slot name='header'></slot>
+                </head>
+                <main>
+                    <slot></slot>
+                </main>
+                <footer>
+                    <slot name='footer'></slot>
+                </footer>
+            
+            </div>
+            `
+        });
+
+        var app = new Vue({
+            el:'#app'
+        })
+    </script>
+</body>
+</html>

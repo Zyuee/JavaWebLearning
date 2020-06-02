@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../axios-master/dist/axios.js"></script>
+</head>
+<body>
+
+    <script>
+
+        //axios get请求
+        // axios.get('http://localhost:3000/axios')
+        // .then(function(response){
+        //     console.log(res);
+        // });
+        
+        // //请求返回json数据格式,不需要再做转化
+        // axios.get('http://localhost:3000/axios-json').then(function(res){
+        //     console.log(res.data);
+        // })
+
+        // //全局配置
+        // //配置请求配置基准URL地址
+        // axios.defaults.baseURL = 'http://localhost:3000/';
+        // //配置请求头信息
+        // axios.defaults.headers['mytoken'] = 'test';
+
+        // axios.get('axios-json').then(function(res){
+        //     console.log(res.data.uname);
+        // });
+
+        
+
+        //拦截器
+        
+        // //请求拦截器
+        // //相当于在请求之前的行为
+        // axios.interceptors.request.use(function(config){
+        //     console.log(config.url)
+        //     config.headers.mytoken = 'hello';
+        //     return config;
+        // },function(err){
+        //     console.log(err);
+        // });
+
+        // axios.get("http://localhost:3000/adata").then(function(res){
+        //     console.log(res)
+        // })
+
+        //响应拦截器
+        //在获取数据之前对数据做一些加工处理
+
+
+        axios.interceptors.response.use(function(res){
+            //console.log(res)
+            //把数据在响应拦截器当中做一些处理
+            var data = res.data;
+            return data;
+            
+            return res;
+        },function(err){
+            console.log(err);
+        });
+
+        axios.get("http://localhost:3000/adata").then(function(res){
+            console.log(res)
+        })
+
+
+        
+    </script>
+    
+</body>
+</html>

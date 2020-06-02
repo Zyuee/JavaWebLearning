@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../axios-master/dist/axios.js"></script>
+</head>
+<body>
+
+    <script>
+
+        //async/await 处理异步操作
+        //原始的效果
+        axios.defaults.baseURL = 'http://localhost:3000/';
+
+        // axios.get('adata').then(function(res){
+        //     console.log(res.data)
+        // })
+
+        // async function queryData(){
+        //     var ret = await axios.get('adata');
+
+
+        //     return ret;
+        // }
+        // queryData().then(function(res){
+        //     console.log(res);
+        // })
+       
+       //多个异步任务
+       async function queryData(){
+           var info = await axios.get('async1');
+           console.log(info);
+           var ret = await axios.get('async1?info='+info.data);
+           return ret.data;
+       }
+
+       queryData().then(function(res){
+           console.log(res);
+       })
+    </script>
+    
+</body>
+</html>
